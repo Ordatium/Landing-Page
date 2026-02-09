@@ -15,6 +15,182 @@ body {
     position: relative;
 }
 
+/* Data Pipelines */
+.data-pipelines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.pipeline {
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.pipeline-left {
+    left: 5%;
+    top: 0;
+}
+
+.pipeline-right {
+    right: 5%;
+    top: 0;
+}
+
+.pipeline-bottom-left {
+    left: 15%;
+    top: 0;
+}
+
+.pipeline-bottom-right {
+    right: 15%;
+    top: 0;
+}
+
+.pipe-line {
+    fill: none;
+    stroke: url(#pipeGradient);
+    stroke: rgba(96, 165, 250, 0.5);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.data-dot {
+    fill: #60a5fa;
+    animation: flowDot 4s ease-in-out infinite;
+}
+
+.pipeline-right .data-dot,
+.pipeline-bottom-right .data-dot {
+    animation-delay: 2s;
+}
+
+.pipeline-bottom-left .data-dot {
+    animation-delay: 1s;
+}
+
+.pipeline-bottom-right .data-dot {
+    animation-delay: 3s;
+}
+
+@keyframes flowDot {
+    0%, 100% {
+        opacity: 0;
+        offset-distance: 0%;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        offset-distance: 100%;
+    }
+}
+
+/* Data Warehouse Icons */
+.warehouse {
+    position: fixed;
+    width: clamp(40px, 6vw, 70px);
+    height: clamp(40px, 6vw, 70px);
+    color: rgba(96, 165, 250, 0.3);
+    z-index: 0;
+    animation: warehousePulse 4s ease-in-out infinite;
+}
+
+.warehouse-left {
+    left: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.warehouse-right {
+    right: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    animation-delay: 2s;
+}
+
+.warehouse svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes warehousePulse {
+    0%, 100% {
+        opacity: 0.3;
+        filter: drop-shadow(0 0 5px rgba(96, 165, 250, 0.2));
+    }
+    50% {
+        opacity: 0.6;
+        filter: drop-shadow(0 0 15px rgba(96, 165, 250, 0.4));
+    }
+}
+
+/* Data Nodes */
+.data-nodes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.node {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(167, 139, 250, 0.4);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
+    animation: nodeFloat 6s ease-in-out infinite;
+}
+
+.node-1 {
+    left: 20%;
+    top: 25%;
+    animation-delay: 0s;
+}
+
+.node-2 {
+    right: 25%;
+    top: 30%;
+    animation-delay: 1.5s;
+}
+
+.node-3 {
+    left: 25%;
+    bottom: 25%;
+    animation-delay: 3s;
+}
+
+.node-4 {
+    right: 20%;
+    bottom: 30%;
+    animation-delay: 4.5s;
+}
+
+@keyframes nodeFloat {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+        opacity: 0.4;
+    }
+    50% {
+        transform: scale(1.5) translateY(-10px);
+        opacity: 0.8;
+    }
+}
+
 /* Floating Particles */
 .particles {
     position: fixed;
